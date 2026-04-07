@@ -13,12 +13,11 @@ interface ProjectCardProps {
   };
 }
 
-// Mapa para escolher o ícone da linguagem corretamente
 const languageIcons: { [key: string]: JSX.Element } = {
   Python: <SiPython className="text-yellow-400" size={16} />,
   Shell: <SiShell className="text-gray-400" size={16} />,
   Javascript: <SiJavascript className="text-yellow-300" size={16} />,
-  CLSL: <span className="text-gray-500 text-xs">CLSL</span> // Placeholder para CLSL
+  CLSL: <span className="text-gray-500 text-xs">CLSL</span>
 };
 
 export function ProjectCard({ project }: ProjectCardProps) {

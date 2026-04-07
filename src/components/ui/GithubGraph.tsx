@@ -22,7 +22,7 @@ export function GithubGraph() {
           {[...Array(52)].map((_, col) => (
             <div key={col} className="flex flex-col gap-[2px]">
               {[...Array(7)].map((_, row) => {
-                const isGreen = Math.random() > 0.7; // Mock para visualização
+                const isGreen = Math.random() > 0.7;
                 return (
                   <div
                     key={row}

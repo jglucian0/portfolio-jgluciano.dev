@@ -37,6 +37,8 @@
     "jest-environment-jsdom": "^30.3.0",
     "postcss": "^8.5.8",
     "tailwindcss": "^4.2.2",
+    "ts-jest": "^29.4.9",
+    "ts-node": "^10.9.2",
     "typescript": "^5"
   },
   "description": "This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).",

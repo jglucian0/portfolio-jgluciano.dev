@@ -17,7 +17,6 @@ export default function ExperienceCard({ item }: { item: ExperienceItem }) {
 
   return (
     <div className="mb-8 last:mb-0 relative w-full">
-      {/* Ícone da Maleta na Linha do Tempo (Cores fixas para manter o padrão escuro igual na imagem) */}
       <div className="absolute left-[-1.875rem] sm:left-[-2.125rem] md:left-[-2.375rem] top-1 flex size-6 sm:size-7 shrink-0 items-center justify-center rounded-lg bg-[#161b22] text-[#F3F4F6] border border-[#364153] shadow-sm" aria-hidden="true">
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="size-3.5 sm:size-4" aria-hidden="true">
           <path d="M16 20V4a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
@@ -25,10 +24,9 @@ export default function ExperienceCard({ item }: { item: ExperienceItem }) {
         </svg>
       </div>
 
-      {/* Conteúdo Clicável com variáveis dinâmicas */}
       <div className="cursor-pointer group" role="button" tabIndex={0} aria-expanded={expanded} onClick={() => setExpanded(!expanded)}>
 
-        {/* Título (Company) */}
+        {/* Título */}
         <div className="font-semibold text-base sm:text-lg text-[var(--text-primary)] leading-tight">
           {item.url ? (
             <a href={item.url} target="_blank" rel="noopener noreferrer" className="hover:underline" onClick={(e) => e.stopPropagation()}>
@@ -77,7 +75,6 @@ export default function ExperienceCard({ item }: { item: ExperienceItem }) {
           </div>
         </div>
 
-        {/* Texto Toggle */}
         <div className="mt-2 text-xs text-[var(--text-dim)] group-hover:text-[var(--text-primary)] transition-colors">
           {expanded ? "Click to collapse" : "Click to expand"}
         </div>

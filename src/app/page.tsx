@@ -13,15 +13,6 @@ import {
 import { FaAws, FaWhatsapp } from "react-icons/fa";
 import { VscVscode } from "react-icons/vsc";
 
-function BuildingIcon() {
-  return (
-    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M10.6667 13.3333V2.66665C10.6667 2.31302 10.5262 1.97389 10.2761 1.72384C10.0261 1.47379 9.68696 1.33331 9.33334 1.33331H6.66667C6.31305 1.33331 5.97391 1.47379 5.72386 1.72384C5.47381 1.97389 5.33334 2.31302 5.33334 2.66665V13.3333" stroke="#E4E4E7" strokeWidth="1.33333" strokeLinecap="round" strokeLinejoin="round" />
-      <path d="M13.3333 4H2.66667C1.93029 4 1.33334 4.59695 1.33334 5.33333V12C1.33334 12.7364 1.93029 13.3333 2.66667 13.3333H13.3333C14.0697 13.3333 14.6667 12.7364 14.6667 12V5.33333C14.6667 4.59695 14.0697 4 13.3333 4Z" stroke="#E4E4E7" strokeWidth="1.33333" strokeLinecap="round" strokeLinejoin="round" />
-    </svg>
-  );
-}
-
 const EXPERIENCE = [
   {
     company: "Personal Projects",

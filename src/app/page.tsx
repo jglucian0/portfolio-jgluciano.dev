@@ -15,34 +15,54 @@ import { VscVscode } from "react-icons/vsc";
 
 const EXPERIENCE = [
   {
-    company: "Personal Projects",
-    url: "https://github.com/S4NKALP",
-    role: "Open Source Developer",
-    period: "2023 - Present",
-    location: "Remote",
+    company: "jgluciano.dev",
+    url: "https://github.com/jglucian0",
+    role: "Desenvolvedor Backend (Freelance)",
+    period: "Out 2024 - Present",
+    location: "Londrina, PR (Remote)",
     details: [
-      "Architected and maintained high-performance CLI tools in Rust and Python, focusing on Linux system optimization and developer productivity.",
-      "Designed and implemented `lapctl`, a Rust-based hardware controller achieving near-instant execution for GPU and power management.",
-      "Built `django-nepkit`, a specialized set of Django tools solving localization challenges for the Nepali developer ecosystem.",
-      "Automated development workflows using Bash and Lua, improving personal sprint velocity and project consistency.",
-      "Managed full-stack deployments on Linux servers, including SSL automation, Nginx configuration, and CI/CD via GitHub Actions."
+      "Arquitetura e desenvolvimento de aplicações backend escaláveis e APIs RESTful focadas em regras de negócio reais.",
+      "Modelagem e otimização de bancos de dados relacionais e em memória utilizando PostgreSQL e Redis.",
+      "Implementação de soluções backend utilizando Python (Django, FastAPI) e Node.js, selecionando a stack ideal por contexto.",
+      "Provisionamento de infraestrutura cloud e deploy containerizado utilizando Docker e AWS.",
+      "Estruturação de pipelines de CI/CD e aplicação de testes automatizados para garantir a estabilidade das entregas.",
+      "Atuação full-cycle com autonomia para realizar integrações de frontend utilizando React e Next.js."
     ],
-    skills: ["Rust", "Python", "Linux", "C", "GTK", "Lua", "Bash", "ArchLinux", "Django", "Git", "PostgreSQL", "Deployment"]
+    skills: [
+      "Python",
+      "Node.js",
+      "JavaScript",
+      "REST API",
+      "PostgreSQL",
+      "Redis",
+      "FastAPI",
+      "Django",
+      "Docker",
+      "AWS",
+      "CI/CD",
+      "TDD"
+    ]
   },
   {
-    company: "Venusion Infotech Pvt. Ltd.",
-    url: "https://www.venusioninfotech.com/",
-    role: "Backend Developer",
-    period: "2024 - 2025",
-    location: "Kohalpur, Nepal",
+    company: "NexaS One ERP",
+    role: "Desenvolvedor Backend Junior",
+    period: "Fev 2025 - Out 2025",
+    location: "Maringá, PR (Remote)",
     details: [
-      "Engineered scalable backend architectures for e-commerce platforms using Django and PostgreSQL, supporting high-concurrency order processing.",
-      "Developed dynamic form processing engines for educational consultancy systems, reducing lead handling time by streamlining data workflows.",
-      "Collaborated with frontend teams to define robust REST API contracts, ensuring seamless integration with React-based interfaces.",
-      "Optimized database performance by implementing advanced indexing and query caching, resulting in faster content delivery for client applications.",
-      "Steered the deployment of production-ready systems on cloud infrastructure, ensuring 99.9% uptime through proactive monitoring."
+      "Desenvolvimento e evolução arquitetural do ERP NexaS One, plataforma especializada na transformação digital do mercado veterinário.",
+      "Implementação de módulos backend estratégicos para automação de processos de gestão financeira e fiscal de clientes B2B.",
+      "Construção e manutenção de APIs RESTful escaláveis em Node.js e PHP para integração de serviços do ecossistema.",
+      "Otimização de consultas e modelagem de dados relacionais no PostgreSQL para garantir performance e integridade nas operações vitais do ERP.",
+      "Manutenção de interfaces legadas e fluxos dinâmicos utilizando JavaScript e jQuery integrados ao backend."
     ],
-    skills: ["Python", "Django", "REST API", "PostgreSQL", "MySQL", "Redis", "Nginx", "Deployment"]
+    skills: [
+      "Node.js",
+      "PHP",
+      "JavaScript",
+      "PostgreSQL",
+      "REST API",
+      "jQuery"
+    ]
   }
 ];
 
@@ -71,7 +91,7 @@ const MAINTAINING = [
 
 const SKILLS = [
   {
-    category: "Languages:",
+    category: "Linguagens:",
     items: [
       { name: "Python", icon: SiPython, color: "#3776AB" },
       { name: "Java", icon: FaJava, color: "#ED8B00" },
@@ -201,7 +221,7 @@ export default function Index() {
             {/* Social icons com react-icons */}
             <div className="flex items-center gap-4 flex-wrap pt-2">
               <a
-                href="https://github.com/s4nkalp"
+                href="https://github.com/jglucian0"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-[var(--text-muted)] hover:text-[var(--text-primary)] transition-all duration-300 hover:scale-110"
@@ -210,7 +230,7 @@ export default function Index() {
               </a>
 
               <a
-                href="https://linkedin.com/in/s4nkalp"
+                href="https://www.linkedin.com/in/jgluciano"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-[var(--text-muted)] hover:text-[var(--text-primary)] transition-all duration-300 hover:scale-110"
@@ -219,7 +239,7 @@ export default function Index() {
               </a>
 
               <a
-                href="https://instagram.com/s4nkalp"
+                href="https://www.instagram.com/jgluciano_/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-[var(--text-muted)] hover:text-[var(--text-primary)] transition-all duration-300 hover:scale-110"
@@ -257,7 +277,7 @@ export default function Index() {
             <div
               className="flex w-[224px] h-[224px] justify-center items-center rounded-full mt-[30px] overflow-hidden flex-shrink-0"
               style={{
-                boxShadow: "0 0 0 2px var(--accent), 0 10px 15px -3px rgba(0,0,0,0.10), 0 4px 6px -4px rgba(0,0,0,0.10)",
+                boxShadow: "0 0 0 2px rgba(55, 115, 98), 0 10px 15px -3px rgba(0,0,0,0.10), 0 4px 6px -4px rgba(0,0,0,0.10)",
               }}
             >
               <img

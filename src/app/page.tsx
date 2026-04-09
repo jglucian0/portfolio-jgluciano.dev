@@ -179,7 +179,7 @@ export default function Index() {
         </div>
 
         {/* Bio + avatar */}
-        <div className="flex items-start gap-10 p-4 w-full">
+        <div className="flex flex-col-reverse md:flex-row items-center md:items-start gap-10 p-4 w-full">
           {/* Text content */}
           <div className="flex flex-col items-start gap-4 flex-1">
             <div className="flex flex-col gap-4 w-full text-base leading-6 text-[var(--text-secondary)]">
@@ -288,31 +288,36 @@ export default function Index() {
             </div>
           </div>
         </div>
-
-        <div className="w-full px-4 pb-8 pt-4">
-          <div className="flex flex-col gap-7">
-            {SKILLS.map((skillGroup, idx) => (
-              <div key={idx} className="flex flex-col gap-3">
-                <h3 className="text-[15px] font-bold text-[var(--text-primary)] tracking-wide">
-                  {skillGroup.category}
-                </h3>
-                <div className="flex flex-wrap gap-3">
-                  {skillGroup.items.map((item, i) => (
-                    <div
-                      key={i}
-                      title={item.name}
-                      className="flex items-center justify-center w-12 h-12 rounded-xl bg-[#161b22] border border-[#1E2939] hover:border-[#99A1AF] hover:scale-105 transition-all duration-200 cursor-pointer"
-                    >
-                      <item.icon size={24} color={item.color} />
-                    </div>
-                  ))}
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-
       </section>
+
+
+
+      <div className="flex justify-center items-start gap-8 mt-12 w-full">
+        <section className="flex flex-col items-center gap-1 flex-1 border-x border-[var(--border-primary)] pb-4">
+          <div className="w-full px-4 pb-8 pt-4">
+            <div className="flex flex-col gap-7 ">
+              {SKILLS.map((skillGroup, idx) => (
+                <div key={idx} className="flex flex-col gap-3">
+                  <h3 className="text-[15px] font-bold text-[var(--text-primary)] tracking-wide">
+                    {skillGroup.category}
+                  </h3>
+                  <div className="flex flex-wrap gap-3">
+                    {skillGroup.items.map((item, i) => (
+                      <div
+                        key={i}
+                        title={item.name}
+                        className="flex items-center justify-center w-12 h-12 rounded-xl bg-[#161b22] border border-[#1E2939] hover:border-[#99A1AF] hover:scale-105 transition-all duration-200 cursor-pointer"
+                      >
+                        <item.icon size={24} color={item.color} />
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      </div>
 
       <div className="flex justify-center items-start gap-8 mt-12 w-full">
         <section className="flex flex-col items-center gap-1 flex-1 border-x border-[var(--border-primary)] pb-4">
@@ -349,6 +354,9 @@ export default function Index() {
         <section className="flex flex-col items-center gap-4 flex-1 border-x border-[var(--border-primary)] pb-4">
           <div className="flex items-center w-full px-4 py-1 border-b border-[var(--border-primary)]">
             <h2 className="text-xl font-bold leading-7 flex-1 text-[var(--text-primary)]">
+              Experiências
+            </h2>
+            <h2 className="text-sm font-bold text-[17px] uppercase tracking-wider">
               Experiências
             </h2>
           </div>

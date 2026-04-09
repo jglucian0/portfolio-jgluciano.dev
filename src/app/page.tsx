@@ -11,7 +11,7 @@ import {
   SiVercel, SiGit, SiPostman, SiNpm
 } from "react-icons/si";
 import { FaAws, FaWhatsapp } from "react-icons/fa";
-import { VscVscode } from "react-icons/vsc";
+import { VscVscode, VscFolder } from "react-icons/vsc";
 
 const EXPERIENCE = [
   {
@@ -333,9 +333,15 @@ export default function Index() {
               {MAINTAINING.map((project) => (
                 <li key={project.name} className="group border border-transparent hover:border-[var(--border-primary)] hover:bg-[var(--bg-card)] p-3 -mx-3 rounded-xl transition-all duration-200">
                   <a href={project.href} target="_blank" rel="noopener noreferrer" className="block">
-                    <span className="text-[var(--text-primary)] font-mono font-semibold group-hover:underline transition-colors block text-sm md:text-base">
-                      {project.name}
-                    </span>
+                    <div className="flex items-center gap-2">
+                      <VscFolder
+                        className="text-[var(--text-primary)] transition-colors shrink-0"
+                        size={18}
+                      />
+                      <span className="text-[var(--text-primary)] font-mono font-semibold group-hover:underline transition-colors block text-sm md:text-base">
+                        {project.name}
+                      </span>
+                    </div>
                     <span className="block text-xs md:text-sm text-[var(--text-muted)] mt-1.5 leading-relaxed">
                       {project.description}
                     </span>
@@ -346,6 +352,8 @@ export default function Index() {
           </div>
         </section>
 
+
+
         {/* Experience Timeline */}
         <section className="flex flex-col items-center gap-1 w-full lg:flex-1 border-x border-[var(--border-primary)] pb-4 bg-[var(--bg-primary)] h-full">
           <div className="flex items-center w-full px-4 md:px-6 py-3 border-b border-[var(--border-primary)]">
@@ -355,8 +363,9 @@ export default function Index() {
           </div>
 
           <div className="w-full px-4 md:px-6 pt-6">
-            <div className="relative pl-6 sm:pl-10 w-full">
-              <div className="absolute left-[7px] sm:left-[19px] top-2 h-[calc(100%-2rem)] w-0.5 bg-[var(--border-secondary)]" aria-hidden="true" />
+            <div className="relative pl-[28px] sm:pl-[48px] w-full">
+
+              <div className="absolute left-[11px] sm:left-[23px] top-2 h-[calc(100%-2rem)] w-[2px] bg-[var(--border-secondary)]" aria-hidden="true" />
 
               <div className="w-full">
                 {EXPERIENCE.map((exp, idx) => (

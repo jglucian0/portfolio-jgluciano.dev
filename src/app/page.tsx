@@ -294,7 +294,7 @@ export default function Index() {
 
       <div className="flex justify-center items-start gap-8 mt-12 w-full">
         <section className="flex flex-col items-center gap-1 flex-1 border-x border-[var(--border-primary)] pb-4">
-          <div className="w-full px-4 pb-8 pt-4">
+          <div className="w-full px-4 pb-4 pt-3">
             <div className="flex flex-col gap-7 ">
               {SKILLS.map((skillGroup, idx) => (
                 <div key={idx} className="flex flex-col gap-3">
@@ -322,7 +322,7 @@ export default function Index() {
       <div className="flex flex-col lg:flex-row items-start gap-8 mt-12 w-full">
 
         {/* Projetos Recentes */}
-        <section className="flex flex-col items-center gap-1 w-full lg:flex-1 border-x border-[var(--border-primary)] pb-4 bg-[var(--bg-primary)] h-full">
+        <section className="flex flex-col items-center gap-1 w-full lg:flex-1 border-x border-[var(--border-primary)] bg-[var(--bg-primary)] h-full">
           <div className="flex items-center w-full px-4 md:px-6 py-3 border-b border-[var(--border-primary)]">
             <h2 className="text-lg font-bold leading-7 flex-1 text-[var(--text-primary)] uppercase tracking-wide">
               Projetos recentes
@@ -355,7 +355,7 @@ export default function Index() {
 
 
         {/* Experience Timeline */}
-        <section className="flex flex-col items-center gap-1 w-full lg:flex-1 border-x border-[var(--border-primary)] pb-4 bg-[var(--bg-primary)] h-full">
+        <section className="flex flex-col items-center gap-1 w-full lg:flex-1 border-x border-[var(--border-primary)] pb-3 bg-[var(--bg-primary)] h-full">
           <div className="flex items-center w-full px-4 md:px-6 py-3 border-b border-[var(--border-primary)]">
             <h2 className="text-lg font-bold leading-7 flex-1 text-[var(--text-primary)] uppercase tracking-wide">
               Experiências

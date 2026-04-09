@@ -11,7 +11,7 @@ import {
   SiVercel, SiGit, SiPostman, SiNpm
 } from "react-icons/si";
 import { FaAws, FaWhatsapp } from "react-icons/fa";
-import { VscVscode } from "react-icons/vsc";
+import { VscVscode, VscFolder } from "react-icons/vsc";
 
 const EXPERIENCE = [
   {
@@ -149,7 +149,7 @@ export default function Index() {
   };
 
   return (
-    <div className="w-full relative">
+    <div className="w-full relative px-4 md:px-6">
       <div
         className={`fixed bottom-5 right-5 flex items-center justify-between px-4 py-3 bg-[var(--bg-secondary)] border border-[var(--border-primary)] rounded-lg shadow-xl z-50 transform transition-all duration-300 ease-in-out ${toastOpen ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4 pointer-events-none"
           }`}
@@ -182,7 +182,7 @@ export default function Index() {
         <div className="flex flex-col-reverse md:flex-row items-center md:items-start gap-10 p-4 w-full">
           {/* Text content */}
           <div className="flex flex-col items-start gap-4 flex-1">
-            <div className="flex flex-col gap-4 w-full text-base leading-6 text-[var(--text-secondary)]">
+            <div className="flex flex-col text-[14px] gap-4 w-full md:text-base leading-6 text-[var(--text-secondary)]">
               <p>
                 Sou Desenvolvedor Backend focado em construir{" "}
                 <strong className="font-bold text-[var(--text-primary)]">aplicações escaláveis e confiáveis</strong>{" "}
@@ -306,7 +306,7 @@ export default function Index() {
                       <div
                         key={i}
                         title={item.name}
-                        className="flex items-center justify-center w-12 h-12 rounded-xl bg-[#161b22] border border-[#1E2939] hover:border-[#99A1AF] hover:scale-105 transition-all duration-200 cursor-pointer"
+                        className="flex items-center justify-center w-9 h-9 md:w-12 md:h-12 rounded-xl bg-[#161b22] border border-[#1E2939] hover:border-[#99A1AF] hover:scale-105 transition-all duration-200 cursor-pointer"
                       >
                         <item.icon size={24} color={item.color} />
                       </div>
@@ -319,51 +319,53 @@ export default function Index() {
         </section>
       </div>
 
-      <div className="flex justify-center items-start gap-8 mt-12 w-full">
-        <section className="flex flex-col items-center gap-1 flex-1 border-x border-[var(--border-primary)] pb-4">
-          <div className="flex items-center w-full px-4 py-1 border-b border-[var(--border-primary)]">
-            <h2 className="text-xl font-bold leading-7 flex-1 text-[var(--text-primary)]">
+      <div className="flex flex-col lg:flex-row items-start gap-8 mt-12 w-full">
+
+        {/* Projetos Recentes */}
+        <section className="flex flex-col items-center gap-1 w-full lg:flex-1 border-x border-[var(--border-primary)] pb-4 bg-[var(--bg-primary)] h-full">
+          <div className="flex items-center w-full px-4 md:px-6 py-3 border-b border-[var(--border-primary)]">
+            <h2 className="text-lg font-bold leading-7 flex-1 text-[var(--text-primary)] uppercase tracking-wide">
               Projetos recentes
             </h2>
           </div>
-
-          <div className="p-4 w-full">
-            <ul className="space-y-3">
+          <div className="p-4 md:p-6 w-full">
+            <ul className="space-y-4">
               {MAINTAINING.map((project) => (
-                <li key={project.name}>
-                  <a
-                    href={project.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="group block rounded-md p-3 -m-3 transition-all duration-200"
-                  >
-                    <span className="text-[var(--text-primary)] font-mono font-semibold group-hover:underline transition-colors">
-                      {project.name}
+                <li key={project.name} className="group border border-transparent hover:border-[var(--border-primary)] hover:bg-[var(--bg-card)] p-3 -mx-3 rounded-xl transition-all duration-200">
+                  <a href={project.href} target="_blank" rel="noopener noreferrer" className="block">
+                    <div className="flex items-center gap-2">
+                      <VscFolder
+                        className="text-[var(--text-primary)] transition-colors shrink-0"
+                        size={18}
+                      />
+                      <span className="text-[var(--text-primary)] font-mono font-semibold group-hover:underline transition-colors block text-sm md:text-base">
+                        {project.name}
+                      </span>
+                    </div>
+                    <span className="block text-xs md:text-sm text-[var(--text-muted)] mt-1.5 leading-relaxed">
+                      {project.description}
                     </span>
                   </a>
-                  <span className="block text-sm text-[var(--text-muted)] mt-1 leading-relaxed">
-                    {project.description}
-                  </span>
                 </li>
               ))}
             </ul>
           </div>
         </section>
 
-        {/* Experience */}
-        <section className="flex flex-col items-center gap-4 flex-1 border-x border-[var(--border-primary)] pb-4">
-          <div className="flex items-center w-full px-4 py-1 border-b border-[var(--border-primary)]">
-            <h2 className="text-xl font-bold leading-7 flex-1 text-[var(--text-primary)]">
-              Experiências
-            </h2>
-            <h2 className="text-sm font-bold text-[17px] uppercase tracking-wider">
+
+
+        {/* Experience Timeline */}
+        <section className="flex flex-col items-center gap-1 w-full lg:flex-1 border-x border-[var(--border-primary)] pb-4 bg-[var(--bg-primary)] h-full">
+          <div className="flex items-center w-full px-4 md:px-6 py-3 border-b border-[var(--border-primary)]">
+            <h2 className="text-lg font-bold leading-7 flex-1 text-[var(--text-primary)] uppercase tracking-wide">
               Experiências
             </h2>
           </div>
 
-          <div className="w-full px-4">
-            <div className="relative pl-8 sm:pl-10 md:pl-12 w-full pt-4">
-              <div className="absolute left-3 sm:left-4 md:left-[23px] top-0 h-full w-0.5 bg-[var(--timeline)]" aria-hidden="true" />
+          <div className="w-full px-4 md:px-6 pt-6">
+            <div className="relative pl-[28px] sm:pl-[48px] w-full">
+
+              <div className="absolute left-[11px] sm:left-[23px] top-2 h-[calc(100%-2rem)] w-[2px] bg-[var(--border-secondary)]" aria-hidden="true" />
 
               <div className="w-full">
                 {EXPERIENCE.map((exp, idx) => (
@@ -373,6 +375,7 @@ export default function Index() {
             </div>
           </div>
         </section>
+
       </div>
     </div>
   );

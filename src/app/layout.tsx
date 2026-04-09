@@ -23,13 +23,13 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body className={spaceGrotesk.className}>
         <ThemeProvider>
           <div className="min-h-screen bg-[var(--bg-secondary)]">
-            <div className="mx-auto max-w-[896px] min-h-screen bg-[var(--bg-primary)]">
-              <div className="flex min-h-screen flex-col justify-between px-0">
+            <div className="mx-auto max-w-[896px] min-h-screen bg-[var(--bg-primary)] shadow-sm">
+              <div className="flex min-h-screen flex-col justify-between">
 
-                <header className="flex flex-col items-start py-10">
-                  <div className="flex justify-between items-center w-full overflow-auto">
+                <header className="flex flex-col items-start px-4 py-8 md:py-10">
+                  <div className="flex justify-between items-center w-full overflow-x-auto pb-2 scrollbar-hide">
                     <Navigation />
-                    <div className="flex items-center">
+                    <div className="flex items-center ml-4 shrink-0">
                       <ThemeToggle />
                     </div>
                   </div>
@@ -38,18 +38,20 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                 <main className="flex-1 w-full">{children}</main>
 
                 <footer className="flex items-center justify-between w-full px-4 py-8 border-t border-[var(--border-primary)]">
-                  <div className="flex w-7 h-7 justify-center items-center rounded-full border border-[var(--border-secondary)] bg-[var(--bg-tertiary)] overflow-hidden flex-shrink-0">
+                  <div className="flex w-[20px] h-[20px] sm:w-7 sm:h-7 justify-center items-center rounded-full border border-[var(--border-secondary)] bg-[var(--bg-tertiary)] overflow-hidden shrink-0">
                     <img src={logo_img.src} alt="Logo" className="w-full h-full object-cover" />
                   </div>
-                  <span className="text-[var(--text-muted)] text-xs font-normal leading-5">
-                    <Link href="https://creativecommons.org/licenses/by-nc-sa/4.0/" className="hover:text-[var(--text-secondary)] transition-colors">CC BY-NC-SA 4.0</Link>
+
+                  <span className="text-[var(--text-muted)] text-[8px] sm:text-xs font-normal leading-5">
+                    <Link href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" className="hover:text-[var(--text-secondary)] transition-colors">CC BY-NC-SA 4.0</Link>
                     {" "}• © 2023 - 2026 {" "}
-                    <Link href="https://www.linkedin.com/in/jgluciano" className="hover:text-[var(--text-secondary)] transition-colors">João Gabriel Luciano</Link>
+                    <Link href="https://www.linkedin.com/in/jgluciano" target="_blank" className="hover:text-[var(--text-secondary)] transition-colors">João Gabriel Luciano</Link>
                   </span>
-                  <div className="flex items-center gap-2 text-[var(--text-muted)] text-xs font-normal leading-5">
-                    <Link href="/sitemap.xml" className="hover:text-[var(--text-secondary)] transition-colors">sitemap.xml</Link>
+
+                  <div className="flex items-center gap-2 text-[var(--text-muted)] text-[8px] sm:text-xs font-normal leading-5">
+                    <Link href="/sitemap.xml" target="_blank" className="hover:text-[var(--text-secondary)] transition-colors">sitemap.xml</Link>
                     <span>•</span>
-                    <Link href="https://www.dmca.com/" className="hover:text-[var(--text-secondary)] transition-colors">DMCA</Link>
+                    <Link href="/dmca" target="_blank" className="hover:text-[var(--text-secondary)] transition-colors">DMCA</Link>
                   </div>
                 </footer>
 

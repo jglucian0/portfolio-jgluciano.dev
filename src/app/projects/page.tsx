@@ -1,3 +1,6 @@
+'use client';
+
+import { useRef, useState } from "react";
 import { FaGithub } from "react-icons/fa";
 import { GithubGraph } from "@/components/ui/GithubGraph";
 import { ProjectCard } from "@/components/ui/ProjectCard";
@@ -35,7 +38,7 @@ const REPOSITORIES = [
   },
   {
     name: "restinit",
-    description: "CLI para criar APIs REST em Node.js, com arquitetura, autenticação, integração com banco de dados e configuração de deploy automatizada.",
+    description: "CLI para criar APIs REST em Node.js, com arquitetura, autenticação, integração com banco de dados e configuração de deploy.",
     techs: "Node.js, Express, PostgreSQL, Jest, Docker",
     language: "JavaScript",
     stars: 3,
@@ -65,7 +68,27 @@ const REPOSITORIES = [
   }
 ];
 
+
 export default function Projects() {
+  const scrollRef = useRef<HTMLDivElement>(null);
+  const [activeIndex, setActiveIndex] = useState(0);
+
+  const handleScroll = () => {
+    if (!scrollRef.current) return;
+    const scrollPosition = scrollRef.current.scrollLeft;
+    const itemWidth = scrollRef.current.clientWidth;
+    const newIndex = Math.round(scrollPosition / itemWidth);
+    setActiveIndex(newIndex);
+  };
+
+  const scrollTo = (index: number) => {
+    if (!scrollRef.current) return;
+    const itemWidth = scrollRef.current.clientWidth;
+    scrollRef.current.scrollTo({
+      left: index * itemWidth,
+      behavior: 'smooth'
+    });
+  };
   return (
     <div className="w-full relative px-4 md:px-6">
       <div className="w-full flex flex-col gap-12 px-4 md:px-6 py-8 border-x border-[var(--border-primary)] min-h-full">
@@ -98,7 +121,11 @@ export default function Projects() {
             </h2>
           </div>
 
-          <div className="flex sm:grid sm:grid-cols-2 md:grid-cols-3 gap-4 pt-2 overflow-x-auto snap-x snap-mandatory sm:pb-0 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
+          <div
+            ref={scrollRef}
+            onScroll={handleScroll}
+            className="flex sm:grid sm:grid-cols-2 md:grid-cols-3 gap-4 pt-2 overflow-x-auto snap-x snap-mandatory sm:pb-0 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none] scroll-smooth"
+          >
             {REPOSITORIES.map((repo, idx) => (
               <a
                 key={idx}
@@ -112,7 +139,22 @@ export default function Projects() {
             ))}
           </div>
 
-          <div className="mt-4 flex justify-center">
+          {/* Bullets Indicadoras (Apenas Mobile) */}
+          <div className="flex justify-center gap-2 mt-4 sm:hidden">
+            {REPOSITORIES.map((_, idx) => (
+              <button
+                key={idx}
+                onClick={() => scrollTo(idx)}
+                aria-label={`Ir para o projeto ${idx + 1}`}
+                className={`h-1.5 rounded-full transition-all duration-300 ${activeIndex === idx
+                  ? "w-4 bg-[var(--text-primary)]"
+                  : "w-1.5 bg-[var(--border-primary)] hover:bg-[var(--text-muted)]"
+                  }`}
+              />
+            ))}
+          </div>
+
+          <div className="mt-6 sm:mt-4 flex justify-center">
             <a
               href="https://github.com/jglucian0"
               target="_blank"

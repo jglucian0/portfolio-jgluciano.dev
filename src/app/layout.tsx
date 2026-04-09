@@ -5,6 +5,7 @@ import Link from "next/link";
 import logo_img from "./icon.png";
 import { ThemeProvider } from "@/components/ui/ThemeProvider";
 import { ThemeToggle } from "@/components/ui/ThemeToggle";
+import { Navigation } from "@/components/ui/Navigation";
 
 const spaceGrotesk = Space_Grotesk({
   subsets: ["latin"],
@@ -27,18 +28,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 
                 <header className="flex flex-col items-start py-10">
                   <div className="flex justify-between items-center w-full overflow-auto">
-                    <div className="flex justify-between items-start gap-0">
-                      <span className="relative flex flex-col items-start py-1 px-2">
-                        <div className="absolute bottom-0.5 left-2 h-px bg-[var(--border-secondary)]" style={{ width: 'calc(100% - 16px)' }} />
-                        <Link href="/" className="text-[16px] font-normal leading-6 tracking-[-0.4px] text-[var(--accent)] no-underline transition-colors">home</Link>
-                      </span>
-                      <span className="relative flex flex-col items-start py-1 px-2">
-                        <Link href="/projects" className="text-[16px] font-normal leading-6 tracking-[-0.4px] text-[var(--text-dim)] no-underline transition-colors">projects</Link>
-                      </span>
-                      <span className="relative flex flex-col items-start py-1 px-2">
-                        <Link href="/blog" className="text-[16px] font-normal leading-6 tracking-[-0.4px] text-[var(--text-dim)] no-underline transition-colors">blog</Link>
-                      </span>
-                    </div>
+                    <Navigation />
                     <div className="flex items-center">
                       <ThemeToggle />
                     </div>
